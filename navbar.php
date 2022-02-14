@@ -9,7 +9,7 @@ else { $active = '';}
 ?>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="./index.php?content=home">Omori</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
