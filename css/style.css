@@ -14,3 +14,8 @@ html, body, main
 {
     min-height: 100vh;
 }
+
+.ml-auto
+{
+    margin-left: auto;
+}

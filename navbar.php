@@ -36,6 +36,14 @@ else { $active = '';}
           </ul>
         </li>
       </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link <?php if ($active == "login") {echo "active";} ?>" aria-current="page" href="./index.php?content=login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?php if ($active == "register") {echo "active";} ?>" href="/index.php?content=register">Sign up</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
