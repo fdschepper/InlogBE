@@ -23,11 +23,36 @@ else {
 
     else
     {
-        $password = "12345";
-        $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
-        $sql = "INSERT INTO `register` (`id`, `email`, `password`, `role`)
-        VALUES (NULL, '$email', '$password_hash', 'customer')";
+      
+
+
+      $oneh = mktime(1, 0, 0, 1, 1, 1970);
+      
+      $ut = time();
+      
+      $mut = microtime();
+      $time = explode(" ", $mut);
+      $d = date("d-y-m", ($ut + $oneh));
+
+      $password = $time[1] * $time[0] * 1000000;
+
+      $password_hash = password_hash($password, PASSWORD_BCRYPT);
+
+      
+      $t = date("H:i:s", ($ut + $oneh));
+
+
+
+        // $password = "12345";
+        // $password_hash = password_hash($password, PASSWORD_BCRYPT);
+
+        $sql = "INSERT INTO `register` (
+          `id`, `email`, `password`, `role`, `activated`
+          )
+        VALUES (
+          NULL, '$email', '$password_hash', 'customer', 0
+          )";
 
         if (mysqli_query($conn, $sql)) {
 
@@ -50,8 +75,8 @@ else {
               </head>
               <body>
                 <h1>Dear customer</h1>
-                <p>you have signed up to the omori website</p>
-                <p> click <a href="http://inlog.be/index.php?content=activate&id=' . $id . '&pwh='. $password_hash .'">here</a> to active your account</p>
+                <p>you have signed up to the omori website on ' . date("d-m-y") . '</p>
+                <p> click <a href="https://backendbembou.000webhostapp.com/InlogSysteemBe/index.php?content=activate&id=' . $id . '&pwh='. $password_hash .'">here</a> to active your account</p>
                 <p> toodles </p>
             
                 <!-- Optional JavaScript; choose one of the two! -->

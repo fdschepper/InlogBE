@@ -21,27 +21,27 @@ else { $active = '';}
           <a class="nav-link <?php if ($active == "home" || $active == "") {echo "active";} ?>" aria-current="page" href="./index.php?content=home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if ($active == "Thegame") {echo "active";} ?>" href="/index.php?content=Thegame">The game</a>
+          <a class="nav-link <?php if ($active == "Thegame") {echo "active";} ?>" href="./index.php?content=TheGame">The game</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if ($active == "History") {echo "active";} ?>" href="/index.php?content=History">History</a>
+          <a class="nav-link <?php if ($active == "History") {echo "active";} ?>" href="./index.php?content=History">History</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle <?php if ($active == "Buy" || $active == "Themaking") {echo "active";} ?>" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             More
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item <?php if ($active == "Buy") {echo "active";} ?>" href="/index.php?content=Buy">Buy</a></li>
-            <li><a class="dropdown-item <?php if ($active == "Themaking") {echo "active";} ?>" href="/index.php?content=Themaking">The making</a></li>
+            <li><a class="dropdown-item <?php if ($active == "Buy") {echo "active";} ?>" href="./index.php?content=Buy">Buy</a></li>
+            <li><a class="dropdown-item <?php if ($active == "Themaking") {echo "active";} ?>" href="./index.php?content=TheMaking">The making</a></li>
           </ul>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link <?php if ($active == "login") {echo "active";} ?>" aria-current="page" href="./index.php?content=login">Login</a>
+          <a class="nav-link <?php if ($active == "login") {echo "active";} ?>" aria-current="page" href="./index.php?content=Login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if ($active == "register") {echo "active";} ?>" href="/index.php?content=register">Sign up</a>
+          <a class="nav-link <?php if ($active == "register") {echo "active";} ?>" href="./index.php?content=Register">Sign up</a>
         </li>
       </ul>
     </div>

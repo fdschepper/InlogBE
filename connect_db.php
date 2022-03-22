@@ -1,8 +1,13 @@
 <?php 
     define("SERVERNAME", "localhost");
-    define("USERNAME", "omo");
-    define("PASSWORD", "123");
-    define("DBNAME", "omoribe");
+    define("USERNAME", "id18575415_omo");
+    define("PASSWORD", "aBcD12345!!!");
+    define("DBNAME", "id18575415_omoribe");
 
-    $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DBNAME);
+    $conn = mysqli_connect(
+    SERVERNAME,
+    USERNAME,
+    PASSWORD,
+    DBNAME
+    );
 ?>

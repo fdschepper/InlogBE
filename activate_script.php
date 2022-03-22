@@ -20,26 +20,35 @@ elseif (strcmp($password, $passwordCheck))
 }
 else 
 {
-    $sql = "SELECT * FROM `register` WHERE `id` = $id AND `password` = '$pwh'";
+    $sql = "SELECT * FROM `register` WHERE `id` = $id";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result))
     {
-        //maak pwh
-        $password_hash = password_hash($password, PASSWORD_BCRYPT);
-        //update nieuw password
-        $sql = "UPDATE `register` 
-                SET    `password` = '$password_hash' 
-                WHERE  `id` = $id
-                AND    `password` = '$pwh'";
 
-        if (mysqli_query($conn, $sql))
+        $record = mysqli_fetch_assoc($result);
+
+        if ( $record["activated"] )
         {
-            header("Location: ./index.php?content=message&alert=success");
+            header("Location: ./index.php?content=message&alert=alreadyactive");
         }
-        else
-        {
-            header("Location: ./index.php?content=message&alert=error&id=$id&pwh=$pwh");
+        else {
+            //maak pwh
+            $password_hash = password_hash($password, PASSWORD_BCRYPT);
+            //update nieuw password
+            $sql = "UPDATE `register` SET `password` = '$password_hash', `activated` = 1 WHERE `id` = $id";
+    
+            if (mysqli_query($conn, $sql))
+            {
+                header("Location: ./index.php?content=message&alert=success");
+                echo $conn, $sql;
+            }
+            else
+            {
+                header("Location: ./index.php?content=message&alert=error&id=$id&pwh=$pwh");
+            }
+            
         }
+
     }
     else 
     //error
