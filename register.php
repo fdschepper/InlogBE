@@ -4,7 +4,7 @@
             <form  action="./index.php?content=register_script" method="post">
                 <div class="form-group">
                     <label for="email">Enter your email address</label>
-                    <input name="email" type="email" class="form-control" id="email" aria-describedby="email" required>
+                    <input name="email" type="email" class="form-control" id="email" aria-describedby="email" required autofocus>
                     <small id="email" class="form-text text-muted">I will share your email with everyone :)</small>
                 </div>
                 <button type="submit" class="btn btn-primary">Log in</button>

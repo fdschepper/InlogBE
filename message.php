@@ -64,6 +64,12 @@ switch ($_GET["alert"]) {
       </div>';
       header("Refresh: 3; ./index.php?content=home" );
     break;
+    case "logout" :
+      echo '<div class="alert alert-success" role="alert">
+      Logged out successfully!
+      </div>';
+      header("Refresh: 3; ./index.php?content=home" );
+    break;
     case "passwordnotequal" :
       echo '<div class="alert alert-danger" role="alert">
       passwords do not match.

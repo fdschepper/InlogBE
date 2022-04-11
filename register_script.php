@@ -97,10 +97,10 @@ else {
             $headers .= "Content-type: text/html; charset=UTF-8\r\n";
             $headers .= "From: FredFaz@pizapx.co";
 
-
+            echo $message;
             mail($to, $subject, $message, $headers);
 
-            header("Location: ./index.php?content=message&alert=registersuccess");
+            header("Refresh:5; url=./index.php?content=message&alert=registersuccess");
         }
         else{
             header("Location: ./index.php?content=message&alert=registererror");

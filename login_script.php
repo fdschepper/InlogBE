@@ -43,6 +43,11 @@ else
         }
         else
         {
+
+            session_start();
+            $_SESSION["id"] = $record["id"];
+            $_SESSION["role"] = $record["role"];
+
             switch($record["role"])
             {//inlog succes
             case 'customer':
